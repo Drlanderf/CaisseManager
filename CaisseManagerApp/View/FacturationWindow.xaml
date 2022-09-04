@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CaisseManagerApp.View" xmlns:model="clr-namespace:CaisseManagerApp.Model" 
-        d:DataContext="{d:DesignInstance Type=model:FactureInfoModel}"
+        xmlns:local="clr-namespace:CaisseManagerApp.View" xmlns:model="clr-namespace:CaisseManagerApp.Model" xmlns:viewmodel="clr-namespace:CaisseManagerApp.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewmodel:FacturationWindowViewModel}"
         mc:Ignorable="d"
         Title="FacturationWindow" Height="450" Width="800">
     <Grid>
@@ -39,6 +39,7 @@
                 Text="Commande : " 
                 Style="{StaticResource TextBlockTheme}"/>
                 <Button Content="OK" 
+                Command="{Binding CmdBtnFacturationOk}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left" 
                 Height="40" Width="85"
@@ -49,6 +50,8 @@
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
                 Height="40" Width="85"
+                        
+                Command="{Binding CmdBtnFacturationCancel}"
                 Style="{StaticResource NumericKeypadTheme}"
                  Margin="0,0,10,10"/>
             </Grid>

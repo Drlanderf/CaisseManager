@@ -1,4 +1,5 @@
 ﻿using CaisseManagerApp.Model;
+using CaisseManagerApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace CaisseManagerApp.View.UserControls
 
         private void BtnFacturation(object sender, RoutedEventArgs e)
         {
-            FactureInfoModel maFacture = new FactureInfoModel();
+            FacturationWindowViewModel maFacture = new FacturationWindowViewModel();
             FacturationWindow facturationForm = new FacturationWindow();
             facturationForm.DataContext = maFacture;
 
