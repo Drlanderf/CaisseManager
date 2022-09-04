@@ -1,1 +1,1 @@
-# CaisseManager-LukasPaquay
+# CaisseManager
