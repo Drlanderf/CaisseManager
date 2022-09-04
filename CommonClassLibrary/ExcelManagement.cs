@@ -41,7 +41,6 @@ namespace CommonClassLibrary
             try
             {
                 oXl = ExcelOpen();
-                oXl.Visible = true;
                 double ligne = 1, cDESCRIPTION = 1;
 
                 //FACTURE INFOS
