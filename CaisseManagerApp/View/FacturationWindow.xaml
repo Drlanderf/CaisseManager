@@ -38,22 +38,22 @@
                 <TextBlock Margin="0,47,0,0" 
                 Text="Commande : " 
                 Style="{StaticResource TextBlockTheme}"/>
-                <Button Content="OK" 
+                <Button x:Name="Ok" Content="OK" 
                 Command="{Binding CmdBtnFacturationOk}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left" 
                 Height="40" Width="85"
                 Style="{StaticResource NumericKeypadTheme}" 
                 
-                Margin="10,0,0,10"/>
-                <Button Content="CANCEL" 
+                Margin="10,0,0,10" Click="Button_Click"/>
+                <Button x:Name="Cancel" Content="CANCEL" 
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
                 Height="40" Width="85"
                         
                 Command="{Binding CmdBtnFacturationCancel}"
                 Style="{StaticResource NumericKeypadTheme}"
-                 Margin="0,0,10,10"/>
+                 Margin="0,0,10,10" Click="Cancel_Click"/>
             </Grid>
     </Grid>
     </Grid>

@@ -44,11 +44,12 @@ namespace CommonClassLibrary
                 oXl.Visible = true;
                 double ligne = 1, cDESCRIPTION = 1;
 
-                //FACTURE
+                //FACTURE INFOS
                 oSheet = (Excel._Worksheet)oWb.Sheets["Facture"];
                 oSheet.Range["DATE_PRINT"].Value = DATE_PRINT.ToString();
                 oSheet.Range["DATE_ECHEANCE"].Value = DATE_ECHEANCE.ToString();
                 oSheet.Range["TVA"].Value = TVA;
+                oSheet.Range["COMMANDE"].Value = COMMANDE;
 
                 //DETAIL
                /* oSheet = (Excel.Worksheet)oWb.Sheets["Detail"];

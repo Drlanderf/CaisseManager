@@ -36,6 +36,7 @@ namespace CaisseManagerApp.ViewModel
         private void BtnCancel()
         {
             this.MyProperty = false;
+
         }
         public ICommand CmdBtnFacturationOk { get { return new RelayCommand(BtnOk); } }
         private void BtnOk()
