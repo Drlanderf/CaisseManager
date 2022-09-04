@@ -23,7 +23,7 @@ namespace CaisseManagerApp.ViewModel
             //TODO : MODEL PROPRIETER , VIEWMODEL POUR METHODE AFIN DE TRAVAILLER SUR LES MODELE
             try
             {
-                DAL myDAL = DAL.getInstance();
+                DAL myDAL = DAL.GetInstance();
                 string result = myDAL.ExecuteQuery("SELECT " +
                     "TBLARTICLE.[CODE_BARRE], " +
                     "TBLARTICLE.[DESCRIPTION], " +

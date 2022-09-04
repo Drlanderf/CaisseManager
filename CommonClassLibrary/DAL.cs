@@ -11,10 +11,10 @@ namespace CommonClassLibrary
 {
     public class DAL
     {
-        private OleDbConnection connection;
+        private readonly OleDbConnection connection;
         private static DAL _instance = null;
 
-        public static DAL getInstance()
+        public static DAL GetInstance()
         {
             if (_instance == null)
             {

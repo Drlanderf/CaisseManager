@@ -92,7 +92,6 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ShoppingBasketViewModel.cs" />
     <Compile Include="ViewModel\UCCaisseManagerTopMenuViewModel.cs" />
-    <Compile Include="ViewModel\UCKeypadViewModel.cs" />
     <Compile Include="View\UserControls\UCCaisseManagerTopMenu.xaml.cs">
       <DependentUpon>UCCaisseManagerTopMenu.xaml</DependentUpon>
     </Compile>

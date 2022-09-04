@@ -281,7 +281,8 @@
             HorizontalAlignment="Right" 
             Width="322" 
             VerticalAlignment="Top"/>
-        <Button Grid.Column="0" Grid.Row="1" Command="{Binding CmdTestMessage}" Cursor="Hand">Test</Button>
+        <!--Bouton de test pour Icommand-->
+        <!--<Button Grid.Column="0" Grid.Row="1" Command="{Binding CmdTestMessage}" Cursor="Hand">Test</Button>-->
     </Grid>
 
 </Window>

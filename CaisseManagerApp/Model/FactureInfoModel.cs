@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonClassLibrary;
-//TODO : Refaire ce model sur base de ce que j'ai fait pour ArticleModel
 namespace CaisseManagerApp.Model
 {
     public class FactureInfoModel

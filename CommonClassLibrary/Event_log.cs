@@ -42,7 +42,7 @@ namespace CommonClassLibrary
                      "'" + this.Remarque + "')";
             try
             {
-                DAL myDAL = DAL.getInstance();
+                DAL myDAL = DAL.GetInstance();
                 myDAL.ExecuteNonQuery_dt(qry);
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace CommonClassLibrary
         public DataTable Get_Events()
 
         {
-            DAL myDAL = DAL.getInstance();
+            DAL myDAL = DAL.GetInstance();
             DataTable dt = myDAL.ExecuteQuery_dt("SELECT * FROM eventlog ORDER BY DATE_TIME DESC");
             return dt;
         }
@@ -73,7 +73,7 @@ namespace CommonClassLibrary
                              ") ENGINE = InnoDB  DEFAULT CHARSET = latin1 AUTO_INCREMENT = 1; ";
             try
             {
-                DAL myDAL = DAL.getInstance();
+                DAL myDAL = DAL.GetInstance();
                 myDAL.ExecuteNonQuery_dt(qry);
             }
             catch (Exception ex)
