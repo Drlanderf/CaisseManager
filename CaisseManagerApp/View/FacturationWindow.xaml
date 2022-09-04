@@ -46,7 +46,7 @@
                 Height="40" Width="85"
                 Style="{StaticResource NumericKeypadTheme}" 
                 
-                Margin="10,0,0,10" Click="Button_Click"/>
+                Margin="10,0,0,10" Click="Button_Click" Background="#FF64C832"/>
                 <Button x:Name="Cancel" Content="CANCEL" 
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
@@ -54,7 +54,7 @@
                         
                 Command="{Binding CmdBtnFacturationCancel}"
                 Style="{StaticResource NumericKeypadTheme}"
-                 Margin="0,0,10,10" Click="Cancel_Click"/>
+                 Margin="0,0,10,10" Click="Cancel_Click" Background="IndianRed"/>
             </Grid>
     </Grid>
     </Grid>
