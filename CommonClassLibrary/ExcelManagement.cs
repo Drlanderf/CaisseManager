@@ -29,7 +29,7 @@ namespace CommonClassLibrary
                     Console.WriteLine(iox.Message);
                 }
             oXl = new Excel.Application();
-            this.oXl.Visible = false; //true pour dev
+            this.oXl.Visible = true; //true pour dev
             this.TemplateFacture = Environment.CurrentDirectory + @"\CaisseManagerTemp\Template_Facture.xlsm";
             this.oWb = (Excel._Workbook)(this.oXl.Workbooks.Open(this.TemplateFacture, Missing.Value, Missing.Value, Missing.Value,
                 Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value, Missing.Value,
