@@ -1,5 +1,4 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace CaisseManagerApp.Model

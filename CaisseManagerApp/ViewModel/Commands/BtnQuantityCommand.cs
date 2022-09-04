@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CaisseManagerApp.ViewModel.Commands
@@ -25,7 +21,7 @@ namespace CaisseManagerApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            this._ButtonViewModel.SetQuantity(Int32.Parse(_ButtonViewModel.MyArticle.Code_Barre));
+            this._ButtonViewModel.SetQuantity(int.Parse(_ButtonViewModel.MyArticle.Code_Barre));
         }
     }
 }

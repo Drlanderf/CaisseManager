@@ -183,7 +183,7 @@
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="labelQuantity"
-                               Grid.Column="0" Content="{Binding Quantity, Source={StaticResource articleModel}}"
+                               Grid.Column="0" Content="{Binding Quantity, Source={StaticResource articleModel},UpdateSourceTrigger=PropertyChanged}"
                                Width="20"
                                HorizontalAlignment="Center" 
                                Style="{StaticResource LabelTheme}" 
@@ -197,7 +197,8 @@
                                TextAlignment="Left" 
                                VerticalAlignment="Center" 
                                FontSize="14"
-                               Text="{Binding Code_Barre, Source={StaticResource articleModel}, UpdateSourceTrigger=PropertyChanged}" />
+                               Text="{Binding Code_Barre, Source={StaticResource articleModel}, UpdateSourceTrigger=PropertyChanged}" 
+                                />
             </Grid>
             <!-- QuantitéTxt ; DescriptionTxt -->
             <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
