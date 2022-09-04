@@ -82,8 +82,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ArticleModel.cs" />
-    <Compile Include="Model\ClientModel.cs" />
-    <Compile Include="Model\EmployeModel.cs" />
     <Compile Include="ViewModel\ArticleViewModel.cs" />
     <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />
