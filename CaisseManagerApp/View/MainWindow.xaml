@@ -4,12 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CaisseManagerApp"
-        xmlns:UserControls="clr-namespace:CaisseManagerApp.View.UserControls" xmlns:viewmodel="clr-namespace:CaisseManagerApp.ViewModel" x:Class="CaisseManagerApp.MainWindow"
-    d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
-        mc:Ignorable="d"
+        xmlns:UserControls="clr-namespace:CaisseManagerApp.View.UserControls" xmlns:viewmodel="clr-namespace:CaisseManagerApp.ViewModel" xmlns:model="clr-namespace:CaisseManagerApp.Model" x:Class="CaisseManagerApp.MainWindow"
+        xmlns:vm="clr-namespace:CaisseManagerApp.ViewModel"
+        xmlns:m="clr-namespace:CaisseManagerApp.Model"
         
+        mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
-    <Grid>
+    <Window.Resources>
+        <vm:ViewModelBase x:Key="viewModel"/>
+        <vm:ButtonViewModel x:Key="buttonViewModel"/>
+        <vm:ArticleViewModel x:Key="articleViewModel"/>
+        
+
+    </Window.Resources>
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -49,15 +57,15 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btn7" Grid.Column="0" 
                                 Content="7" 
-                                Command="{Binding CmdBtn7_Click}"
+                                Command="{Binding Path=Btn7Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btn8" 
                                 Grid.Column="1" Content="8" 
-                                Command="{Binding CmdBtn8_Click}" 
+                                Command="{Binding Path=Btn8Command, Source={StaticResource buttonViewModel}}" 
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btn9" 
                                 Grid.Column="2" Content="9" 
-                                Command="{Binding CmdBtn9_Click}"
+                                Command="{Binding Path=Btn9Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btnSupprimer" 
                                 Grid.Column="3" Content="←" 
@@ -76,17 +84,17 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btn4" 
                                 Grid.Column="0" Content="4" 
-                                Command="{Binding CmdBtn4_Click}"
+                                Command="{Binding Path=Btn4Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
 
                     <Button x:Name="btn5" 
                                 Grid.Column="1" Content="5" 
-                                Command="{Binding CmdBtn5_Click}"
+                                Command="{Binding Path=Btn5Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
 
                     <Button x:Name="btn6" 
                                 Grid.Column="2" Content="6" 
-                                Command="{Binding CmdBtn6_Click}"
+                                Command="{Binding Path=Btn6Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
 
                     <Button x:Name="btnCancel" 
@@ -106,17 +114,17 @@
                     <Button x:Name="btn1" 
                                 Grid.Column="0" 
                                 Content="1" 
-                                Command="{Binding CmdBtn1_Click}" 
+                                Command="{Binding Path=Btn1Command, Source={StaticResource buttonViewModel}}" 
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btn2" 
                                 Grid.Column="1" 
                                 Content="2" 
-                                Command="{Binding CmdBtn2_Click}"
+                                Command="{Binding Path=Btn2Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btn3"
                                 Grid.Column="2" 
                                 Content="3" 
-                                Command="{Binding CmdBtn3_Click}"
+                                Command="{Binding Path=Btn3Command, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                     <Button x:Name="btnEtoile"
                                 Grid.Column="3"
@@ -134,8 +142,9 @@
                     <Button x:Name="btn0" 
                                 Grid.Column="0" 
                                 Content="0" 
-                                Command="{Binding CmdBtn0_Click}"
-                                Style="{StaticResource NumericKeypadTheme}"/>
+                                
+                                Style="{StaticResource NumericKeypadTheme}" 
+                            Command="{Binding Path=Btn0Command, Source={StaticResource buttonViewModel}}"/>
                     <Button x:Name="btnPoint"
                                 Grid.Column="1" 
                                 Content="." 
@@ -174,7 +183,7 @@
                                Width="20"
                                HorizontalAlignment="Center" 
                                Style="{StaticResource LabelTheme}" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtResult"
+                <TextBox x:Name="txtCode_Barre"
                                Grid.Column="1"                               
                                Width="150"
                                Margin="20,0,0,0"
@@ -183,7 +192,7 @@
                                TextAlignment="Left" 
                                VerticalAlignment="Center" 
                                FontSize="14"
-                               Text="{Binding Code_Barre}" ></TextBox>
+                               Text="{Binding Path=Code_Barre, Source={StaticResource articleViewModel}}" ></TextBox>
             </Grid>
             <!-- QuantitéTxt ; DescriptionTxt -->
             <Grid Grid.Column="0" Grid.Row="1">
@@ -280,7 +289,7 @@
             Width="322" 
             VerticalAlignment="Top"/>
         <!--Bouton de test pour Icommand-->
-        <!--<Button Grid.Column="0" Grid.Row="1" Command="{Binding CmdTestMessage}" Cursor="Hand">Test</Button>-->
-    </Grid>
+        <!--<Button Grid.Column="0" Grid.Row="1" Command="{Binding CmdTestMessage}" Cursor="Hand">Test</Button>
+-->    </Grid>
 
 </Window>

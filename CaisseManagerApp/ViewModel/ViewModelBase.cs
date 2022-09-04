@@ -1,14 +1,24 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+
 namespace CaisseManagerApp.ViewModel
 {
     public class ViewModelBase : ObservableObject,INotifyPropertyChanged
     {
+
+        
+        public ViewModelBase()
+        {
+            
+        }
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
@@ -21,6 +31,8 @@ namespace CaisseManagerApp.ViewModel
                 gestion.Invoke(this, e);
             }
         }
+
+        
 
 
     }

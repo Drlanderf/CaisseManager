@@ -1,4 +1,6 @@
-﻿namespace CaisseManagerApp.Model
+﻿using CaisseManagerApp.ViewModel;
+
+namespace CaisseManagerApp.Model
 {
     public class ArticleModel
     {
@@ -8,6 +10,8 @@
         public float prixU { get; set; }
         public string qtyTmp { get; set; }
         public float PrixTot { get; set; }
-
+        public ArticleModel()
+        {        }
+        
     }
 }

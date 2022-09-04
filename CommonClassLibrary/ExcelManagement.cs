@@ -42,8 +42,9 @@ namespace CommonClassLibrary
             try
             {
                 oXl = ExcelOpen();
+#pragma warning disable CS0219 // The event is never used
                 double ligne = 1, cDESCRIPTION = 1;
-
+#pragma warning restore CS0219
                 //FACTURE INFOS
                 oSheet = (Excel._Worksheet)oWb.Sheets["Facture"];
                 oSheet.Range["DATE_PRINT"].Value = DATE_PRINT.ToString();

@@ -1,4 +1,5 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using CaisseManagerApp.Model;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -12,69 +13,24 @@ namespace CaisseManagerApp.ViewModel
 {
     public class MainViewModel: ViewModelBase
     {
-        public ArticleViewModel MyArticle { get; set; }
         public string Tmp { get; set; }
+        public ArticleModel MyArticle { get; set; }
         public MainViewModel()
         {
-            MyArticle = new ArticleViewModel();
-
+            MyArticle = new ArticleModel();
         }
-        /*//public ICommand CmdCleanTable { get { return new RelayCommand(CleanTable); } }
-        public ICommand CmdTestMessage { get { return new RelayCommand(TestMessage); } }
+        #region DATABINDING
+        
+        #endregion
+        #region test
+        //public ICommand CmdCleanTable { get { return new RelayCommand(CleanTable); } }
+        public ICommand CmdTestMessage => new RelayCommand(TestMessage);
         public void TestMessage()
         {
             MessageBox.Show("TEST OK !");
-        }*/
-        public ICommand CmdBtn0_Click { get { return new RelayCommand(Btn0_Click); } }
-        private void Btn0_Click()
-        {
-            SetNumber("0");
         }
-        public ICommand CmdBtn1_Click { get { return new RelayCommand(Btn1_Click); } }
-        private void Btn1_Click()
-        {
-            SetNumber("1");
-        }
-        public ICommand CmdBtn2_Click { get { return new RelayCommand(Btn2_Click); } }
-        private void Btn2_Click()
-        {
-            SetNumber("2");
-        }
-        public ICommand CmdBtn3_Click { get { return new RelayCommand(Btn3_Click); } }
-        private void Btn3_Click()
-        {
-            SetNumber("3");
-        }
-        public ICommand CmdBtn4_Click { get { return new RelayCommand(Btn4_Click); } }
-        private void Btn4_Click()
-        {
-            SetNumber("4");
-        }
-        public ICommand CmdBtn5_Click { get { return new RelayCommand(Btn5_Click); } }
-        private void Btn5_Click()
-        {
-            SetNumber("5");
-        }
-        public ICommand CmdBtn6_Click { get { return new RelayCommand(Btn6_Click); } }
-        private void Btn6_Click()
-        {
-            SetNumber("6");
-        }
-        public ICommand CmdBtn7_Click { get { return new RelayCommand(Btn7_Click); } }
-        private void Btn7_Click()
-        {
-            SetNumber("7");
-        }
-        public ICommand CmdBtn8_Click { get { return new RelayCommand(Btn8_Click); } }
-        private void Btn8_Click()
-        {
-            SetNumber("8");
-        }
-        public ICommand CmdBtn9_Click { get { return new RelayCommand(Btn9_Click); } }
-        private void Btn9_Click()
-        {
-            SetNumber("9");
-        }
+        #endregion
+
         //Keypad Function
         public ICommand CmdBtnSupprimer_Click { get { return new RelayCommand(Supprimer_Click); } }
         private void Supprimer_Click()
@@ -103,7 +59,7 @@ namespace CaisseManagerApp.ViewModel
             if (Cmpt == 0)
             {
                 Tmp = "♪";
-                MyArticle.SetCode_Barre(.txtResult.Text);
+                MyArticle.SetCode_Barre(.txtCode_Barre.Text);
                 MyArticle.SetDescription(true);
                 MyArticle.SetPrixUnitaire(true);
                 MyArticle.SetQuantity(1);
@@ -112,15 +68,8 @@ namespace CaisseManagerApp.ViewModel
             if (Cmpt == 1)
             {
 
-            }
-            */
-        }
-        void SetNumber(String num)
-        {
-            /*if (txtResult.Text == "0")
-                txtResult.Text = num;
-            else
-                txtResult.Text = txtResult.Text + num;*/
+            }*/
+            
         }
     }
 

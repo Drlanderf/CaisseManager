@@ -1,43 +1,43 @@
-﻿using System;
+﻿using CaisseManagerApp.Model;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CaisseManagerApp.Model;
-using CommonClassLibrary;
 
 namespace CaisseManagerApp.ViewModel
 {
     public class ArticleViewModel : ViewModelBase
     {
-        public ArticleModel MyArticleModel;
+        public ArticleModel MyArticle;
         public ArticleViewModel()
         {
-            MyArticleModel = new ArticleModel();
+            this.MyArticle = new ArticleModel();
         }
         public string Code_Barre
         {
             get
-            { return MyArticleModel.code_barre; }
+            { return MyArticle.code_barre; }
             set
             {
-                MyArticleModel.code_barre = Code_Barre;
+                MyArticle.code_barre += Code_Barre;
                 //SetProperty(ref code_barre, value);
                 NotifierChangementProp("Code_Barre");
 
             }
         }
-        public void SetCode_Barre(string cbTmp)
+        /*public void SetCode_Barre(string cbTmp)
         {
             this.Code_Barre = cbTmp;
-        }
+        }*/
 
         public string Description
         {
-            get { return MyArticleModel.description; }
+            get { return MyArticle.description; }
             set
             {
-                MyArticleModel.description = Description;
+                MyArticle.description = Description;
                 NotifierChangementProp("Description");
             }
         }
@@ -46,7 +46,7 @@ namespace CaisseManagerApp.ViewModel
             if (WhatToDo)
             {
                 DBManagementViewModel commande = new DBManagementViewModel();
-                Description = commande.Row_Article(MyArticleModel.code_barre, "Description").ToString();
+                Description = commande.Row_Article(MyArticle.code_barre, "Description").ToString();
             }
             else
                 Description = "0";
@@ -54,10 +54,10 @@ namespace CaisseManagerApp.ViewModel
         }
         public float PrixUnitaire
         {
-            get { return MyArticleModel.prixU; }
+            get { return MyArticle.prixU; }
             set
             {
-                MyArticleModel.prixU = PrixUnitaire;
+                MyArticle.prixU = PrixUnitaire;
                 //SetProperty(ref prixU, value);
                 NotifierChangementProp("PrixUnitaire");
             }
@@ -67,7 +67,7 @@ namespace CaisseManagerApp.ViewModel
             if (WhatToDo)
             {
                 DBManagementViewModel commande = new DBManagementViewModel();
-                PrixUnitaire = float.Parse(commande.Row_Article(MyArticleModel.code_barre, "PV"));
+                PrixUnitaire = float.Parse(commande.Row_Article(MyArticle.code_barre, "PV"));
             }
             else
                 PrixUnitaire = 0;
@@ -75,10 +75,10 @@ namespace CaisseManagerApp.ViewModel
         public int Quantity
         {
             get
-            { return MyArticleModel.quantity; }
+            { return MyArticle.quantity; }
             set
             {
-                MyArticleModel.quantity = Quantity;
+                MyArticle.quantity = Quantity;
                 //SetProperty(ref quantity, value);
                 NotifierChangementProp("Quantity");
 
@@ -91,10 +91,10 @@ namespace CaisseManagerApp.ViewModel
         public string QtyTmp
         {
             get
-            { return MyArticleModel.qtyTmp; }
+            { return MyArticle.qtyTmp; }
             set
             {
-                MyArticleModel.qtyTmp = QtyTmp;
+                MyArticle.qtyTmp = QtyTmp;
                 //SetProperty(ref qtyTmp, value);
                 NotifierChangementProp("QtyTmp");
             }
@@ -103,5 +103,12 @@ namespace CaisseManagerApp.ViewModel
         {
             this.QtyTmp = cbTmp;
         }
+        public void SimpleMethod()
+        {
+            Debug.WriteLine("Hello");
+        }
+
+
+
     }
 }

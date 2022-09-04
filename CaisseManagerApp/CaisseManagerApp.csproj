@@ -86,6 +86,17 @@
     </ApplicationDefinition>
     <Compile Include="Model\ArticleModel.cs" />
     <Compile Include="ViewModel\ArticleViewModel.cs" />
+    <Compile Include="ViewModel\ButtonViewModel.cs" />
+    <Compile Include="ViewModel\Commands\Btn0Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn1Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn2Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn3Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn4Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn5Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn6Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn7Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn8Command.cs" />
+    <Compile Include="ViewModel\Commands\Btn9Command.cs" />
     <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -155,5 +166,6 @@
   <ItemGroup>
     <Resource Include="1198290.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
