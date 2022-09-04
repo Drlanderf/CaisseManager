@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="CaisseManagerApp.View.UserControls.UCKeypad"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CaisseManagerApp.View.UserControls" xmlns:viewmodel="clr-namespace:CaisseManagerApp.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:UCKeypadViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="136" d:DesignWidth="160">
+    <Grid>
+        <Grid>
+            <!--KEYPAD-->
+            <Grid Grid.Row="0" 
+                      Grid.Column="0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                </Grid.RowDefinitions>
+                <!-- 7 ; 8 ; 9 ; ← -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn7" Grid.Column="0" 
+                                Content="7" 
+                                Command="{Binding CmdBtn7_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn8" 
+                                Grid.Column="1" Content="8" 
+                                Command="{Binding CmdBtn8_Click}" 
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn9" 
+                                Grid.Column="2" Content="9" 
+                                Command="{Binding CmdBtn9_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnSupprimer" 
+                                Grid.Column="3" Content="←" 
+                                Command="{Binding CmdBtnSupprimer_Click}"
+                                Background="DarkOrange"
+                                
+                                Style="{StaticResource NumericKeypadTheme}" />
+                </Grid>
+                <!-- 4 ; 5 ; 6 ; C -->
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn4" 
+                                Grid.Column="0" Content="4" 
+                                Command="{Binding CmdBtn4_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btn5" 
+                                Grid.Column="1" Content="5" 
+                                Command="{Binding CmdBtn5_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btn6" 
+                                Grid.Column="2" Content="6" 
+                                Command="{Binding CmdBtn6_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btnCancel" 
+                                Grid.Column="3" Content="C" 
+                                Command="{Binding CmdBtnCancel_Click}"
+                                Background="IndianRed"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                </Grid>
+                <!-- 1 ; 2 ; 3 ; * -->
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn1" 
+                                Grid.Column="0" 
+                                Content="1" 
+                                Command="{Binding CmdBtn1_Click}" 
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn2" 
+                                Grid.Column="1" 
+                                Content="2" 
+                                Command="{Binding CmdBtn2_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn3"
+                                Grid.Column="2" 
+                                Content="3" 
+                                Command="{Binding CmdBtn3_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnEtoile"
+                                Grid.Column="3"
+                                Content="*"
+                                Command="{Binding CmdBtnEtoile_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                </Grid>
+                <!-- 0 ; . ; ENTER -->
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn0" 
+                                Grid.Column="0" 
+                                Content="0" 
+                                Command="{Binding CmdBtn0_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnPoint"
+                                Grid.Column="1" 
+                                Content="." 
+                                Command="{Binding CmdBtnPoint_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnEnter"
+                                Grid.Column="2"
+                                Content="ENTER"
+                                Width="80"
+                                Style="{StaticResource NumericKeypadTheme}"
+                                Command="{Binding CmdBtnEnter_Click}"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

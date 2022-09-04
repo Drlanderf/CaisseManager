@@ -1,0 +1,53 @@
+﻿<Application x:Class="CaisseManagerApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CaisseManagerApp"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <!-- Style par défaut pour les boutons -->
+        <Style BasedOn="{StaticResource {x:Type Button}}"
+            TargetType="{x:Type Button}"
+           x:Key="NumericKeypadTheme">
+            <Setter Property="Background" Value="LightGray"></Setter>
+
+            <Setter Property="Height" Value="34"></Setter>
+            <Setter Property="Width" Value="40"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        </Style>
+        <!-- Style par défaut pour les labels -->
+        <Style BasedOn="{StaticResource {x:Type Label}}"
+            TargetType="{x:Type Label}"
+           x:Key="LabelTheme">
+            <Setter Property="Background" Value="#FFBDBDBD"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Content" Value=""></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="0.5"></Setter>
+        </Style>
+        <!-- Style par défaut pour les TextBox -->
+        <Style BasedOn="{StaticResource {x:Type TextBox}}"
+            TargetType="{x:Type TextBox}"
+           x:Key="TextBoxTheme">
+            <Setter Property="Background" Value="#FFBDBDBD"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="0.5"></Setter>
+            <Setter Property="Width" Value="120"></Setter>
+        </Style>
+        <!-- Style par défaut pour les TextBlock -->
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+            TargetType="{x:Type TextBlock}"
+           x:Key="TextBlockTheme">
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+        </Style>
+         
+    </Application.Resources>
+</Application>
