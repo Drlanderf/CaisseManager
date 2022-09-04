@@ -29,6 +29,23 @@ namespace CommonClassLibrary
 
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Environment.CurrentDirectory + @"\CaisseManagerDB\DBCaisseManager.accdb;Persist Security Info=False;Jet OLEDB:Database Password=";
             connection = new OleDbConnection(connectionString);
+
+
+            //mySQL
+
+
+            /*private MySqlConnection connection;
+            private const string server="localhost";
+            private const string database = "eventlog";
+            private const string username = "root";
+            private const string password = "";*/
+            /*string connectstring = "server =" + server + 
+                "; database=" + database + 
+                "; username=" + username + 
+                "; password = " + password + 
+                ";";*/
+            //connection = new MySqlConnection(connectstring);
+
         }
         private void DB_open()
         {

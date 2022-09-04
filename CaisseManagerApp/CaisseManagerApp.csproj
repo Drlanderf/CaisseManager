@@ -96,12 +96,6 @@
     <Compile Include="View\UserControls\UCCaisseManagerTopMenu.xaml.cs">
       <DependentUpon>UCCaisseManagerTopMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\UCData.xaml.cs">
-      <DependentUpon>UCData.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\UCKeypad.xaml.cs">
-      <DependentUpon>UCKeypad.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\FacturationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,14 +117,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\UserControls\UCCaisseManagerTopMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\UCData.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\UCKeypad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
