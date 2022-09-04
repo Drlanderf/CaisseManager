@@ -14,7 +14,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -23,19 +23,257 @@
 
         <UserControls:UCCaisseManagerTopMenu 
             VerticalAlignment="Top" 
-            Margin="0,10,13,0" 
+            Margin="0,10,10,0" 
             HorizontalAlignment="Right" 
-            Width="787"/>
-        <UserControls:UCKeypad 
-            Grid.Column="0"
-            HorizontalAlignment="Left" 
-            Margin="10,35,0,0" 
-            VerticalAlignment="Top"/>
-        <UserControls:UCData 
-            Grid.Column="1"
-            HorizontalAlignment="Left" 
-            Margin="10,37,0,0" 
-            VerticalAlignment="Top" Width="313" Grid.ColumnSpan="2"/>
+            Width="787" Grid.ColumnSpan="3"/>
+        <Grid>
+            <!--KEYPAD-->
+            <Grid Grid.Row="0" 
+                  Grid.Column="0" 
+                  Width="160" 
+                  Height="136">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="34"/>
+                </Grid.RowDefinitions>
+                <!-- 7 ; 8 ; 9 ; ← -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn7" Grid.Column="0" 
+                                Content="7" 
+                                Command="{Binding CmdBtn7_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn8" 
+                                Grid.Column="1" Content="8" 
+                                Command="{Binding CmdBtn8_Click}" 
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn9" 
+                                Grid.Column="2" Content="9" 
+                                Command="{Binding CmdBtn9_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnSupprimer" 
+                                Grid.Column="3" Content="←" 
+                                Command="{Binding CmdBtnSupprimer_Click}"
+                                Background="DarkOrange"
+                                
+                                Style="{StaticResource NumericKeypadTheme}" />
+                </Grid>
+                <!-- 4 ; 5 ; 6 ; C -->
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn4" 
+                                Grid.Column="0" Content="4" 
+                                Command="{Binding CmdBtn4_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btn5" 
+                                Grid.Column="1" Content="5" 
+                                Command="{Binding CmdBtn5_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btn6" 
+                                Grid.Column="2" Content="6" 
+                                Command="{Binding CmdBtn6_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+
+                    <Button x:Name="btnCancel" 
+                                Grid.Column="3" Content="C" 
+                                Command="{Binding CmdBtnCancel_Click}"
+                                Background="IndianRed"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                </Grid>
+                <!-- 1 ; 2 ; 3 ; * -->
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn1" 
+                                Grid.Column="0" 
+                                Content="1" 
+                                Command="{Binding CmdBtn1_Click}" 
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn2" 
+                                Grid.Column="1" 
+                                Content="2" 
+                                Command="{Binding CmdBtn2_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btn3"
+                                Grid.Column="2" 
+                                Content="3" 
+                                Command="{Binding CmdBtn3_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnEtoile"
+                                Grid.Column="3"
+                                Content="*"
+                                Command="{Binding CmdBtnEtoile_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                </Grid>
+                <!-- 0 ; . ; ENTER -->
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn0" 
+                                Grid.Column="0" 
+                                Content="0" 
+                                Command="{Binding CmdBtn0_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnPoint"
+                                Grid.Column="1" 
+                                Content="." 
+                                Command="{Binding CmdBtnPoint_Click}"
+                                Style="{StaticResource NumericKeypadTheme}"/>
+                    <Button x:Name="btnEnter"
+                                Grid.Column="2"
+                                Content="ENTER"
+                                Width="80"
+                                Style="{StaticResource NumericKeypadTheme}"
+                                Command="{Binding CmdBtnEnter_Click}"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+        <!--DATA-->
+        <Grid Grid.Row="0" 
+              Grid.Column="1" 
+              HorizontalAlignment="Left" 
+              Width="325" Height="240" 
+              VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="34"/>
+            </Grid.RowDefinitions>
+            <!-- LABEL -->
+            <Grid Grid.Row="0" Grid.Column="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="labelQuantity"
+                               Grid.Column="0" Content="1"
+                               Width="20"
+                               HorizontalAlignment="Center" 
+                               Style="{StaticResource LabelTheme}" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtResult"
+                               Grid.Column="1"                               
+                               Width="150"
+                               Margin="20,0,0,0"
+                               Background="#FFBDBDBD"
+                               HorizontalAlignment="Left" 
+                               TextAlignment="Left" 
+                               VerticalAlignment="Center" 
+                               FontSize="14"
+                               Text="{Binding Code_Barre}" ></TextBox>
+            </Grid>
+            <!-- QuantitéTxt ; DescriptionTxt -->
+            <Grid Grid.Column="0" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="QuantityTxt" 
+                                   Grid.Column="0"
+                                   Style="{StaticResource TextBlockTheme}"><Run Text="Quantité"/></TextBlock>
+                <TextBlock x:Name="DescriptionTxt" 
+                                   Grid.Column="1"
+                                   Style="{StaticResource TextBlockTheme}"
+                                   HorizontalAlignment="Left"
+                                   Margin="20,0,0,0"><Run Text="Description"/></TextBlock>
+
+            </Grid>
+            <!-- LABEL (Quantité2 et Description) -->
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="labelQuantity2"
+                               Grid.Column="0"
+                               Width="20"
+                               HorizontalAlignment="Center" 
+                               Content="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"
+                               Style="{StaticResource LabelTheme}"/>
+                <Label x:Name="labelDescription"
+                               Grid.Column="1"
+                               Width="180"
+                               Margin="20,0,0,0"
+                               HorizontalAlignment="Left"
+                               Content="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                               Style="{StaticResource LabelTheme}" 
+                       />
+            </Grid>
+            <!-- PRIX UNITAIRE -->
+            <Grid Grid.Row="3" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="PrixUnitTxt" 
+                                   Grid.Column="0"
+                                   Style="{StaticResource TextBlockTheme}"><Run Text="Prix unitaire :"/></TextBlock>
+                <Label x:Name="labelPrixUnit"
+                               Grid.Column="1"
+                               Width="180"
+                               Margin="20,0,0,0"
+                               HorizontalAlignment="Left"
+                               Style="{StaticResource LabelTheme}" 
+                               Content="{Binding PrixUnitaire, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <!-- TOTAL ARTICLE -->
+            <Grid Grid.Row="4" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="TotalArticleTxt" 
+                                   Grid.Column="0"
+                                   Style="{StaticResource TextBlockTheme}"><Run Text="Total article :"/></TextBlock>
+                <Label x:Name="labelTotalArticle"
+                               Grid.Column="1"
+                               Width="180"
+                               Margin="20,0,0,0"
+                               HorizontalAlignment="Left"
+                               Style="{StaticResource LabelTheme}" 
+                               Content="{Binding PrixTot}"/>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnAddBag"
+                                Grid.Column="1"
+                                Content="Ajouter au panier"
+                                Width="180"
+                                Style="{StaticResource NumericKeypadTheme}"
+                                Margin="20,0,0,0" />
+
+            </Grid>
+        </Grid>
+
+
         <DataGrid 
             Grid.Column="3"
             d:ItemsSource="{d:SampleData ItemCount=5}" 
