@@ -18,6 +18,7 @@
                         Name="dp1"
                         Margin="76,0,0,0" 
                         VerticalAlignment="Top" FirstDayOfWeek="Monday"
+                            
                         SelectedDate="{Binding DATE_ECHEANCE}" 
                         DisplayDateStart="{Binding DATE_ECHEANCE}"/>
 

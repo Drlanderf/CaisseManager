@@ -153,10 +153,8 @@
         </Grid>
         <!--DATA-->
         <Grid Grid.Row="0" 
-              Grid.Column="1" 
-              HorizontalAlignment="Left" 
-              Width="325" Height="240" 
-              VerticalAlignment="Bottom">
+              Grid.Column="1"
+              Height="188">
             <Grid.RowDefinitions>
                 <RowDefinition Height="34"/>
                 <RowDefinition Height="18"/>
