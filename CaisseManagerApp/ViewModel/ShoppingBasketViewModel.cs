@@ -11,7 +11,7 @@ namespace CaisseManagerApp.ViewModel
     public class ShoppingBasketViewModel : ViewModelBase
     {
         public ObservableCollection <ArticleModel> ShoppingBasket;
-        public ArticleModel MyArticleModel;
+        public ArticleModel MyArticleModel { get; set; }
 
         public ShoppingBasketViewModel()
         {
