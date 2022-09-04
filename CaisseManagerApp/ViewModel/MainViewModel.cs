@@ -37,11 +37,6 @@ namespace CaisseManagerApp.ViewModel
         {
 
         }
-        public ICommand CmdBtnEtoile_Click { get { return new RelayCommand(Etoile_Click); } }
-        private void Etoile_Click()
-        {
-
-        }
         public ICommand CmdBtnPoint_Click { get { return new RelayCommand(Point_Click); } }
         private void Point_Click()
         {

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using CaisseManagerApp.Model;
+using System.ComponentModel;
 
 namespace CaisseManagerApp.ViewModel
 {
-    public class ButtonViewModel
+    public class ButtonViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public Btn0Command Btn0Command { get; set; }
         public Btn1Command Btn1Command { get; set; }
@@ -22,7 +23,8 @@ namespace CaisseManagerApp.ViewModel
         public Btn7Command Btn7Command { get; set; }
         public Btn8Command Btn8Command { get; set; }
         public Btn9Command Btn9Command { get; set; }
-        public ArticleViewModel MyArticle { get; set; }
+        public BtnQuantityCommand BtnQuantityCommand { get; set; }
+        public ArticleModel MyArticle { get; set; }
         public ButtonViewModel()
         {
             this.Btn0Command = new Btn0Command(this);
@@ -35,7 +37,8 @@ namespace CaisseManagerApp.ViewModel
             this.Btn7Command = new Btn7Command(this);
             this.Btn8Command = new Btn8Command(this);
             this.Btn9Command = new Btn9Command(this);
-            this.MyArticle = new ArticleViewModel();
+            this.BtnQuantityCommand = new BtnQuantityCommand(this);
+            this.MyArticle = new ArticleModel();
         }
 
         public void SimpleMethod()
@@ -45,9 +48,31 @@ namespace CaisseManagerApp.ViewModel
         public void SetNumber(String num)
         {
             this.MyArticle.Code_Barre += num;
+            Debug.WriteLine(MyArticle.Code_Barre);
+            NotifierChangementProp("Code_Barre");
+        }
+        public void SetQuantity(int num)
+        {
+            this.MyArticle.Quantity = num;
+            this.MyArticle.Code_Barre = String.Empty;
+            NotifierChangementProp("Quantity");
+            Debug.WriteLine(MyArticle.Quantity);
         }
 
-
+        #region Implémentation interface Notify property changed
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
+        public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        protected void NotifierChangementProp(string Nomprop)
+        {
+            PropertyChangedEventHandler gestion = this.PropertyChanged;
+            if (gestion != null)
+            {
+                PropertyChangedEventArgs e = new PropertyChangedEventArgs(Nomprop);
+                gestion.Invoke(this, e);
+            }
+        }
+        #endregion
 
 
 

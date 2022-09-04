@@ -85,7 +85,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ArticleModel.cs" />
-    <Compile Include="ViewModel\ArticleViewModel.cs" />
     <Compile Include="ViewModel\ButtonViewModel.cs" />
     <Compile Include="ViewModel\Commands\Btn0Command.cs" />
     <Compile Include="ViewModel\Commands\Btn1Command.cs" />
@@ -97,11 +96,11 @@
     <Compile Include="ViewModel\Commands\Btn7Command.cs" />
     <Compile Include="ViewModel\Commands\Btn8Command.cs" />
     <Compile Include="ViewModel\Commands\Btn9Command.cs" />
+    <Compile Include="ViewModel\Commands\BtnQuantityCommand.cs" />
     <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ShoppingBasketViewModel.cs" />
-    <Compile Include="ViewModel\UCCaisseManagerTopMenuViewModel.cs" />
     <Compile Include="View\UserControls\UCCaisseManagerTopMenu.xaml.cs">
       <DependentUpon>UCCaisseManagerTopMenu.xaml</DependentUpon>
     </Compile>

@@ -7,17 +7,17 @@
         xmlns:UserControls="clr-namespace:CaisseManagerApp.View.UserControls" xmlns:viewmodel="clr-namespace:CaisseManagerApp.ViewModel" xmlns:model="clr-namespace:CaisseManagerApp.Model" x:Class="CaisseManagerApp.MainWindow"
         xmlns:vm="clr-namespace:CaisseManagerApp.ViewModel"
         xmlns:m="clr-namespace:CaisseManagerApp.Model"
-        
+        d:DataContext="{d:DesignInstance Type=model:ArticleModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
     <Window.Resources>
         <vm:ViewModelBase x:Key="viewModel"/>
         <vm:ButtonViewModel x:Key="buttonViewModel"/>
-        <vm:ArticleViewModel x:Key="articleViewModel"/>
+        <m:ArticleModel x:Key="articleModel"/>
         
 
     </Window.Resources>
-        <Grid>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -129,7 +129,7 @@
                     <Button x:Name="btnEtoile"
                                 Grid.Column="3"
                                 Content="*"
-                                Command="{Binding CmdBtnEtoile_Click}"
+                                Command="{Binding BtnQuantityCommand, Source={StaticResource buttonViewModel}}"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                 </Grid>
                 <!-- 0 ; . ; ENTER -->
@@ -164,6 +164,10 @@
         <Grid Grid.Row="0" 
               Grid.Column="1"
               Height="188">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="223*"/>
+                <ColumnDefinition Width="111*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="34"/>
                 <RowDefinition Height="18"/>
@@ -173,16 +177,17 @@
                 <RowDefinition Height="34"/>
             </Grid.RowDefinitions>
             <!-- LABEL -->
-            <Grid Grid.Row="0" Grid.Column="0" >
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <Label x:Name="labelQuantity"
-                               Grid.Column="0" Content="1"
+                               Grid.Column="0" Content="{Binding Quantity, Source={StaticResource articleModel}}"
                                Width="20"
                                HorizontalAlignment="Center" 
-                               Style="{StaticResource LabelTheme}" VerticalAlignment="Center"/>
+                               Style="{StaticResource LabelTheme}" 
+                               VerticalAlignment="Center"/>
                 <TextBox x:Name="txtCode_Barre"
                                Grid.Column="1"                               
                                Width="150"
@@ -192,10 +197,10 @@
                                TextAlignment="Left" 
                                VerticalAlignment="Center" 
                                FontSize="14"
-                               Text="{Binding Path=Code_Barre, Source={StaticResource articleViewModel}}" ></TextBox>
+                               Text="{Binding Code_Barre, Source={StaticResource articleModel}, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
             <!-- QuantitéTxt ; DescriptionTxt -->
-            <Grid Grid.Column="0" Grid.Row="1">
+            <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
@@ -211,7 +216,7 @@
 
             </Grid>
             <!-- LABEL (Quantité2 et Description) -->
-            <Grid Grid.Row="2" Grid.Column="0">
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
@@ -232,7 +237,7 @@
                        />
             </Grid>
             <!-- PRIX UNITAIRE -->
-            <Grid Grid.Row="3" Grid.Column="0">
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
@@ -249,7 +254,7 @@
                                Content="{Binding PrixUnitaire, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
             <!-- TOTAL ARTICLE -->
-            <Grid Grid.Row="4" Grid.Column="0">
+            <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
@@ -265,7 +270,7 @@
                                Style="{StaticResource LabelTheme}" 
                                Content="{Binding PrixTot}"/>
             </Grid>
-            <Grid Grid.Row="5" Grid.Column="0">
+            <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
                     <ColumnDefinition Width="200"/>
@@ -290,6 +295,7 @@
             VerticalAlignment="Top"/>
         <!--Bouton de test pour Icommand-->
         <!--<Button Grid.Column="0" Grid.Row="1" Command="{Binding CmdTestMessage}" Cursor="Hand">Test</Button>
--->    </Grid>
+-->
+    </Grid>
 
 </Window>
