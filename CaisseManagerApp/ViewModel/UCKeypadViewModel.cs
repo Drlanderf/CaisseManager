@@ -10,7 +10,7 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace CaisseManagerApp.ViewModel
-{
+{ //TODO : revenir en arrière et faire en sorte d'avoir le moins possible de UC
     public class UCKeypadViewModel : ObservableObject
     {
         public UCData MyUCData { get; set; }
