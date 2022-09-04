@@ -13,6 +13,10 @@ namespace CaisseManagerApp.ViewModel
 {
     public class ButtonViewModel : ViewModelBase, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Contient les différentes méthodes utilisées par les différents boutons
+        /// </summary>
+        #region Propiétés
         public Btn0Command Btn0Command { get; set; }
         public Btn1Command Btn1Command { get; set; }
         public Btn2Command Btn2Command { get; set; }
@@ -27,6 +31,8 @@ namespace CaisseManagerApp.ViewModel
         public BtnClearCommand BtnClearCommand { get; set; }
         public BtnEnterCommand BtnEnterCommand { get; set; }
         public ArticleModel MyArticle { get; set; }
+        #endregion
+        #region Constructeur
         public ButtonViewModel()
         {
             this.Btn0Command = new Btn0Command(this);
@@ -44,7 +50,8 @@ namespace CaisseManagerApp.ViewModel
             this.BtnQuantityCommand = new BtnQuantityCommand(this);
             this.MyArticle = new ArticleModel();
         }
-
+        #endregion
+        #region méthodes
         public void SimpleMethod()
         {
             Debug.WriteLine("Hello");
@@ -74,6 +81,7 @@ namespace CaisseManagerApp.ViewModel
             this.MyArticle.PrixUnitaire = 0;
             this.MyArticle.PrixTot = 0;
         }
+        #endregion
 
         #region Implémentation interface Notify property changed
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
