@@ -11,6 +11,7 @@ namespace CommonClassLibrary
 {
     public class ExcelManagement
     {
+        //public string TodayDate = DateTime.Now.ToString();
         string TemplateFacture;
         Excel.Application oXl;
         Excel._Workbook oWb;
