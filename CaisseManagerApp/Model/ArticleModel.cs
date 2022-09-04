@@ -59,11 +59,23 @@ namespace CaisseManagerApp.Model
             }
         }
         #endregion
+        #region PRIX_TOT
+        private float _PrixTot { get; set; }
+        public float PrixTot
+        {
+            get { return this._PrixTot; }
+            set
+            {
+                this._PrixTot = value;
+                //SetProperty(ref _PrixTot, value);
+                NotifierChangementProp("PrixTot");
+            }
+        }
+        #endregion
+        public ArticleModel()
+        {
 
-        public string _qtyTmp { get; set; }
-        public float _PrixTot { get; set; }
-        
-
+        }
 
 
 

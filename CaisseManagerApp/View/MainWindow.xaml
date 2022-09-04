@@ -99,7 +99,7 @@
 
                     <Button x:Name="btnCancel" 
                                 Grid.Column="3" Content="C" 
-                                Command="{Binding CmdBtnCancel_Click}"
+                                Command="{Binding BtnClearCommand, Source={StaticResource buttonViewModel}}"
                                 Background="IndianRed"
                                 Style="{StaticResource NumericKeypadTheme}"/>
                 </Grid>
@@ -155,7 +155,7 @@
                                 Content="ENTER"
                                 Width="80"
                                 Style="{StaticResource NumericKeypadTheme}"
-                                Command="{Binding CmdBtnEnter_Click}"/>
+                                Command="{Binding BtnEnterCommand, Source={StaticResource buttonViewModel}}"/>
 
                 </Grid>
             </Grid>
@@ -226,14 +226,14 @@
                                Grid.Column="0"
                                Width="20"
                                HorizontalAlignment="Center" 
-                               Content="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"
+                               Content="{Binding Quantity, Source={StaticResource articleModel}}"
                                Style="{StaticResource LabelTheme}"/>
                 <Label x:Name="labelDescription"
                                Grid.Column="1"
                                Width="180"
                                Margin="20,0,0,0"
                                HorizontalAlignment="Left"
-                               Content="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                               Content="{Binding Description, Source={StaticResource articleModel}}"
                                Style="{StaticResource LabelTheme}" 
                        />
             </Grid>
@@ -252,7 +252,7 @@
                                Margin="20,0,0,0"
                                HorizontalAlignment="Left"
                                Style="{StaticResource LabelTheme}" 
-                               Content="{Binding PrixUnitaire, UpdateSourceTrigger=PropertyChanged}"/>
+                               Content="{Binding PrixUnitaire, Source={StaticResource articleModel}}"/>
             </Grid>
             <!-- TOTAL ARTICLE -->
             <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
@@ -269,7 +269,7 @@
                                Margin="20,0,0,0"
                                HorizontalAlignment="Left"
                                Style="{StaticResource LabelTheme}" 
-                               Content="{Binding PrixTot}"/>
+                               Content="{Binding PrixTot, Source={StaticResource articleModel}}"/>
             </Grid>
             <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>

@@ -96,6 +96,8 @@
     <Compile Include="ViewModel\Commands\Btn7Command.cs" />
     <Compile Include="ViewModel\Commands\Btn8Command.cs" />
     <Compile Include="ViewModel\Commands\Btn9Command.cs" />
+    <Compile Include="ViewModel\Commands\BtnClearCommand.cs" />
+    <Compile Include="ViewModel\Commands\BtnEnterCommand.cs" />
     <Compile Include="ViewModel\Commands\BtnQuantityCommand.cs" />
     <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />

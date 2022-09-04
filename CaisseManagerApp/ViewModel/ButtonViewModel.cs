@@ -24,6 +24,8 @@ namespace CaisseManagerApp.ViewModel
         public Btn8Command Btn8Command { get; set; }
         public Btn9Command Btn9Command { get; set; }
         public BtnQuantityCommand BtnQuantityCommand { get; set; }
+        public BtnClearCommand BtnClearCommand { get; set; }
+        public BtnEnterCommand BtnEnterCommand { get; set; }
         public ArticleModel MyArticle { get; set; }
         public ButtonViewModel()
         {
@@ -37,6 +39,8 @@ namespace CaisseManagerApp.ViewModel
             this.Btn7Command = new Btn7Command(this);
             this.Btn8Command = new Btn8Command(this);
             this.Btn9Command = new Btn9Command(this);
+            this.BtnQuantityCommand = new BtnQuantityCommand(this);
+            this.BtnClearCommand = new BtnClearCommand(this);
             this.BtnQuantityCommand = new BtnQuantityCommand(this);
             this.MyArticle = new ArticleModel();
         }
@@ -57,6 +61,18 @@ namespace CaisseManagerApp.ViewModel
             this.MyArticle.Code_Barre = String.Empty;
             NotifierChangementProp("Quantity");
             Debug.WriteLine(MyArticle.Quantity);
+        }
+        public void Enter()
+        {
+            this.MyArticle.PrixTot = this.MyArticle.Quantity * this.MyArticle.PrixUnitaire;
+        }
+        public void Clear()
+        {
+            this.MyArticle.Code_Barre = String.Empty;
+            this.MyArticle.Quantity = 0;
+            this.MyArticle.Description = String.Empty;
+            this.MyArticle.PrixUnitaire = 0;
+            this.MyArticle.PrixTot = 0;
         }
 
         #region Implémentation interface Notify property changed
