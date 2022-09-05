@@ -19,10 +19,12 @@ namespace CaisseManagerApp.ViewModel
         public string COMMANDE { get; set; }
         public string RefCommClient { get; set; }
         public bool MyProperty { get; set; }
+        public string TitleOfFacturationWindow { get; set; }
         public FacturationWindowViewModel()
         {
             this.DATE_PRINT = DateTime.Now;
             this.DATE_ECHEANCE = DateTime.Now;
+            TitleOfFacturationWindow = "Caisse Manager - Facturation";
         }
         
         public ICommand CmdBtnFacturationCancel { get { return new RelayCommand(BtnCancel); } }
