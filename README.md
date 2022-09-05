@@ -1,5 +1,3 @@
-# CaisseManager
-Caisse enregistreuse en C#, via le WPF MVVM
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -27,7 +25,27 @@ Caisse enregistreuse en C#, via le WPF MVVM
 
 
 
+<br />
+<div align="center">
+  <a href="https://github.com/DrLanderf/CaisseManager">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
+<h3 align="center">Basic Caisse Manager </h3>
+
+  <p align="center">
+    Simple base for every Caisse Manager
+    <br />
+    <a href="https://github.com/DrLanderf/CaisseManager"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/DrLanderf/CaisseManager">View Demo</a>
+    ·
+    <a href="https://github.com/DrLanderf/CaisseManager/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/DrLanderf/CaisseManager/issues">Request Feature</a>
+  </p>
+</div>
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
