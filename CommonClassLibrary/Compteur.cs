@@ -31,10 +31,6 @@ namespace CommonClassLibrary
                 else
                     admin.SetValue("Compteur", 1);
             }
-            /*else
-            {
-                admin.SetValue("Compteur", "1");
-            }*/
             return admin.GetValue("Compteur").ToString();
 
         }
@@ -50,10 +46,6 @@ namespace CommonClassLibrary
                 else
                     admin.SetValue("Compteur", 1);
             }
-            /*else
-            {
-                admin.SetValue("Compteur", "1");
-            }*/
         }
         public void IncCmpt()
         {
@@ -67,11 +59,6 @@ namespace CommonClassLibrary
                 else
                     admin.SetValue("Compteur", 1);
             }
-            /*else
-            {
-                admin.SetValue("Compteur", "1");
-            }*/
-
         }
     }
 }
