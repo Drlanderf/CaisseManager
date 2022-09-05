@@ -22,6 +22,7 @@ namespace CaisseManagerApp.ViewModel.Commands
         public void Execute(object parameter)
         {
             this._ButtonViewModel.SetQuantity(int.Parse(_ButtonViewModel.MyArticle.Code_Barre));
+            _ButtonViewModel.MyArticle.Code_Barre = String.Empty;
         }
     }
 }

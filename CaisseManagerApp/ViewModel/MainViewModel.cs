@@ -11,13 +11,23 @@ using System.Windows.Input;
 
 namespace CaisseManagerApp.ViewModel
 {
-    public class MainViewModel: ViewModelBase
+    public class MainViewModel: ButtonViewModel
     {
-        public string Tmp { get; set; }
-        public ArticleModel MyArticle { get; set; }
+        public string TitleOfMainWindow { get; set; }
+        public List<ArticleModel> LtArticle { get; set; }
         public MainViewModel()
         {
-            MyArticle = new ArticleModel();
+            TitleOfMainWindow = "Caisse Manager";
+            LtArticle = new List<ArticleModel>();
+            for (int i = 0; i < 4; i++)
+            {
+                ArticleModel articleModel = new ArticleModel();
+                articleModel.Quantity = i+1;
+                articleModel.Description = "Ceci est un test :" + i.ToString();
+                articleModel.PrixUnitaire = i + 1 * 5;
+                articleModel.PrixTot = articleModel.PrixUnitaire * articleModel.Quantity;
+                LtArticle.Add(articleModel);
+            }
         }
         #region DATABINDING
         
@@ -31,44 +41,7 @@ namespace CaisseManagerApp.ViewModel
         }
         #endregion
 
-        //Keypad Function
-        public ICommand CmdBtnSupprimer_Click { get { return new RelayCommand(Supprimer_Click); } }
-        private void Supprimer_Click()
-        {
 
-        }
-        public ICommand CmdBtnPoint_Click { get { return new RelayCommand(Point_Click); } }
-        private void Point_Click()
-        {
-
-        }
-        public ICommand CmdBtnCancel_Click { get { return new RelayCommand(Cancel_Click); } }
-        private void Cancel_Click()
-        {
-
-        }
-        public ICommand CmdBtnEnter_Click { get { return new RelayCommand(Enter_Click); } }
-        private void Enter_Click()
-        {
-            /*int Cmpt = 0;
-            if (Cmpt == 0)
-            {
-                Tmp = "♪";
-                MyArticle.SetCode_Barre(.txtCode_Barre.Text);
-                MyArticle.SetDescription(true);
-                MyArticle.SetPrixUnitaire(true);
-                MyArticle.SetQuantity(1);
-                Cmpt++;
-            }
-            if (Cmpt == 1)
-            {
-
-            }*/
             
         }
     }
-
-
-
-
-}
