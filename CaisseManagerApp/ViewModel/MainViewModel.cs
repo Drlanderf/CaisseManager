@@ -3,6 +3,7 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,11 @@ namespace CaisseManagerApp.ViewModel
     public class MainViewModel: ButtonViewModel
     {
         public string TitleOfMainWindow { get; set; }
-        public List<ArticleModel> LtArticle { get; set; }
+        public ObservableCollection<ArticleModel> LtArticle { get; set; }
         public MainViewModel()
         {
             TitleOfMainWindow = "Caisse Manager";
-            LtArticle = new List<ArticleModel>();
+            LtArticle = new ObservableCollection<ArticleModel>();
             for (int i = 0; i < 4; i++)
             {
                 ArticleModel articleModel = new ArticleModel();

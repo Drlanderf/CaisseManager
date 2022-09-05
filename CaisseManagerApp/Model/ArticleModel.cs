@@ -5,6 +5,7 @@ namespace CaisseManagerApp.Model
 {
     public class ArticleModel : ObservableObject, INotifyPropertyChanged
     {
+
         #region CODE_BARRE
         private string _code_barre;
         public string Code_Barre
@@ -72,17 +73,9 @@ namespace CaisseManagerApp.Model
             }
         }
         #endregion
-        public ArticleModel()
-        {
-
-        }
-
-
-
+        public ArticleModel(){        }
         #region Implémentation interface Notify property changed
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         protected void NotifierChangementProp(string Nomprop)
         {
             PropertyChangedEventHandler gestion = this.PropertyChanged;
