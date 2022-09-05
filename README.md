@@ -38,8 +38,6 @@
     <br />
     <a href="https://github.com/DrLanderf/CaisseManager"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/DrLanderf/CaisseManager">View Demo</a>
     ·
     <a href="https://github.com/DrLanderf/CaisseManager/issues">Report Bug</a>
     ·
