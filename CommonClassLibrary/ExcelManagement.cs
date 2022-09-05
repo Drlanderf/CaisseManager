@@ -69,7 +69,7 @@ namespace CommonClassLibrary
                 cmpt.IncCmpt();
                 oWb.Close(true);
                 oXl.Quit();
-                //TODO: CHERCHER A SAVOIR INSERER DANS L'AUTRE FEUILLE POUR "DETAIL TICKET"
+                //CHERCHER A SAVOIR INSERER DANS L'AUTRE FEUILLE POUR "DETAIL TICKET"
 
                 
             }
