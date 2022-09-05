@@ -16,11 +16,13 @@ namespace CommonClassLibrary
         Excel.Application oXl;
         Excel._Workbook oWb;
         Excel._Worksheet oSheet;
+        
         public Excel.Application ExcelOpen()
         {
+
                 string src = Environment.CurrentDirectory + @"\CaisseManagerTemplate\Template_Facture.xlsm";
                 string dest = Environment.CurrentDirectory + @"\CaisseManagerTemp\Template_Facture.xlsm";
-
+                
                 try
                 {
                     File.Copy(src, dest, true);
@@ -39,15 +41,17 @@ namespace CommonClassLibrary
         }
         public void Facture(DateTime DATE_PRINT, DateTime DATE_ECHEANCE, string TVA, string COMMANDE, string RefCommClient)
         {
+            Compteur cmpt = new Compteur();
             try
             {
+                
                 oXl = ExcelOpen();
 #pragma warning disable CS0219 // The event is never used
                 double ligne = 1, cDESCRIPTION = 1;
 #pragma warning restore CS0219
                 //FACTURE INFOS
                 oSheet = (Excel._Worksheet)oWb.Sheets["Facture"];
-                oSheet.Range["FACTURE"].Value = Compteur.getCmpt().ToString();
+                oSheet.Range["FACTURE"].Value = cmpt.GetCmpt().ToString();
                 oSheet.Range["DATE_PRINT"].Value = DATE_PRINT.ToString();
                 oSheet.Range["DATE_ECHEANCE"].Value = DATE_ECHEANCE.ToString();
                 oSheet.Range["TVA"].Value = TVA;
@@ -61,8 +65,8 @@ namespace CommonClassLibrary
 
                 oSheet.PageSetup.FitToPagesWide = 1;
                 oSheet.PageSetup.FitToPagesTall = 1;
-                oWb.ExportAsFixedFormat(Excel.XlFixedFormatType.xlTypePDF, Environment.CurrentDirectory + @"\CaisseManagerFacturation\Facture n " + Compteur.getCmpt().ToString() + ".pdf");
-                Compteur.incCmpt();
+                oWb.ExportAsFixedFormat(Excel.XlFixedFormatType.xlTypePDF, Environment.CurrentDirectory + @"\CaisseManagerFacturation\Facture n " + cmpt.GetCmpt() + ".pdf");
+                cmpt.IncCmpt();
                 oWb.Close(true);
                 oXl.Quit();
                 //TODO: CHERCHER A SAVOIR INSERER DANS L'AUTRE FEUILLE POUR "DETAIL TICKET"

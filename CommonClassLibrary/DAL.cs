@@ -7,6 +7,8 @@ using System.Data;
 using System.Configuration;
 using static System.Net.Mime.MediaTypeNames;
 using System.Data.OleDb;
+using Microsoft.Win32;
+
 namespace CommonClassLibrary
 {
     public class DAL

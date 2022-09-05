@@ -3,24 +3,75 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 
 namespace CommonClassLibrary
 {
-    public static class Compteur
+    public class Compteur
     {
-        private static int Cmpt { get; set; } = 1;
+        public RegistryKey rk { get; set; }
+        public RegistryKey AdminKey { get; set; }
 
-        public static int getCmpt()
+
+
+        public Compteur()
         {
-            return Cmpt;
+            this.rk = Registry.CurrentUser.CreateSubKey("Software");
+            this.AdminKey = rk.CreateSubKey("CaisseManager");
         }
-        public static void setCmpt(int cmpt)
+        public string GetCmpt()
         {
-            Cmpt = cmpt;
+            RegistryKey admin = AdminKey;
+            if (admin != null)
+            {
+                if (admin.GetValue("Compteur") != null)
+                {
+                    return admin.GetValue("Compteur").ToString();
+                }
+                else
+                    admin.SetValue("Compteur", 1);
+            }
+            /*else
+            {
+                admin.SetValue("Compteur", "1");
+            }*/
+            return admin.GetValue("Compteur").ToString();
+
         }
-        public static void incCmpt()
+        public void SetCmpt(int cmpt)
         {
-            setCmpt(Cmpt + 1);
+            RegistryKey admin = AdminKey;
+            if (admin != null)
+            {
+                if (admin.GetValue("Compteur") != null)
+                {
+                    admin.SetValue("Compteur", cmpt);
+                }
+                else
+                    admin.SetValue("Compteur", 1);
+            }
+            /*else
+            {
+                admin.SetValue("Compteur", "1");
+            }*/
+        }
+        public void IncCmpt()
+        {
+            RegistryKey admin = AdminKey;
+            if (admin != null)
+            {
+                if (admin.GetValue("Compteur") != null)
+                {
+                    SetCmpt(int.Parse(admin.GetValue("Compteur").ToString()) + 1);
+                }
+                else
+                    admin.SetValue("Compteur", 1);
+            }
+            /*else
+            {
+                admin.SetValue("Compteur", "1");
+            }*/
+
         }
     }
 }

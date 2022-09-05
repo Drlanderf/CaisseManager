@@ -29,15 +29,5 @@ namespace CaisseManagerApp
             InitializeComponent();
             this.DataContext = new MainViewModel();
         }
-
-        private void txtCode_Barre_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
-        private void txtCode_Barre_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
