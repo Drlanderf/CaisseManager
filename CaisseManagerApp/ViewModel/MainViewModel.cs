@@ -15,7 +15,6 @@ namespace CaisseManagerApp.ViewModel
     public class MainViewModel: ButtonViewModel
     {
         public string TitleOfMainWindow { get; set; }
-        public ObservableCollection<ArticleModel> LtArticle { get; set; }
         public MainViewModel()
         {
             TitleOfMainWindow = "Caisse Manager";
@@ -35,11 +34,11 @@ namespace CaisseManagerApp.ViewModel
         #endregion
         #region test
         //public ICommand CmdCleanTable { get { return new RelayCommand(CleanTable); } }
-        public ICommand CmdTestMessage => new RelayCommand(TestMessage);
+        /*public ICommand CmdTestMessage => new RelayCommand(TestMessage);
         public void TestMessage()
         {
             MessageBox.Show("TEST OK !");
-        }
+        }*/
         #endregion
 
 

@@ -30,7 +30,9 @@ namespace CaisseManagerApp.ViewModel
         public BtnQuantityCommand BtnQuantityCommand { get; set; }
         public BtnClearCommand BtnClearCommand { get; set; }
         public BtnEnterCommand BtnEnterCommand { get; set; }
+        public btnAddBagCommand BtnAddBagCommand { get; set; }
         public ArticleModel MyArticle { get; set; }
+        public ShoppingBasketModel MyShoppingBasket { get; set; }
         #endregion
         #region Constructeur
         public ButtonViewModel()
@@ -48,10 +50,14 @@ namespace CaisseManagerApp.ViewModel
             this.BtnQuantityCommand = new BtnQuantityCommand(this);
             this.BtnClearCommand = new BtnClearCommand(this);
             this.BtnQuantityCommand = new BtnQuantityCommand(this);
+            this.BtnAddBagCommand = new btnAddBagCommand(this);
             this.MyArticle = new ArticleModel();
+            this.MyShoppingBasket = new ShoppingBasketModel();
         }
         #endregion
-        #region méthodes
+        /// <summary>
+        /// Méthodes de ButtonViewModel
+        /// </summary>
         public void SimpleMethod()
         {
             Debug.WriteLine("Hello");
@@ -81,7 +87,13 @@ namespace CaisseManagerApp.ViewModel
             this.MyArticle.PrixUnitaire = 0;
             this.MyArticle.PrixTot = 0;
         }
-        #endregion
+        public void AddBag()
+        {
+            List<ArticleModel> LtArticle = new List<ArticleModel>();
+            LtArticle.Add(this.MyArticle);
+            this.MyShoppingBasket.ShoppingBasket = LtArticle;
+        }
+
 
         #region Implémentation interface Notify property changed
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword

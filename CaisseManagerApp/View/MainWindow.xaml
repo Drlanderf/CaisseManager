@@ -13,6 +13,7 @@
     <Window.Resources>
         <vm:ViewModelBase x:Key="viewModel"/>
         <m:ArticleModel x:Key="articleModel"/>
+        <m:ShoppingBasketModel x:Key="shoppingBasketModel"/>
         <vm:MainViewModel x:Key="mainViewModel"/>
 
 
@@ -289,7 +290,7 @@
 
         <DataGrid 
             Grid.Column="1"
-            d:ItemsSource="{Binding LtArticle, Source={StaticResource mainViewModel}, UpdateSourceTrigger=PropertyChanged}" 
+            d:ItemsSource="{Binding ShopingBasket, Source={StaticResource shoppingBasketModel}, UpdateSourceTrigger=PropertyChanged}" 
             Margin="0,35,10,0" 
             HorizontalAlignment="Right" 
             Width="347" 
