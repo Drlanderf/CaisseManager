@@ -13,7 +13,7 @@ namespace CaisseManagerApp.Model
             set
             {
                 this._code_barre = value;
-                //SetProperty(ref _code_barre, value);
+                SetProperty(ref _code_barre, value);
                 NotifierChangementProp("Code_Barre");
             }
         }
@@ -26,7 +26,7 @@ namespace CaisseManagerApp.Model
             set
             {
                 this._description = value;
-                //SetProperty(ref _description, value);
+                SetProperty(ref _description, value);
                 NotifierChangementProp("Description");
             }
         }
@@ -40,7 +40,7 @@ namespace CaisseManagerApp.Model
             set
             {
                 this._quantity = value;
-                //SetProperty(ref _quantity, value);
+                SetProperty(ref _quantity, value);
                 NotifierChangementProp("Quantity");
 
             }
@@ -54,20 +54,20 @@ namespace CaisseManagerApp.Model
             set
             {
                 this._prixUnitaire = value;
-                //SetProperty(ref _prixUnitaire, value);
+                SetProperty(ref _prixUnitaire, value);
                 NotifierChangementProp("PrixUnitaire");
             }
         }
         #endregion
         #region PRIX_TOT
-        private float _PrixTot { get; set; }
+        private float _prixTot;
         public float PrixTot
         {
-            get { return this._PrixTot; }
+            get { return this._prixTot; }
             set
             {
-                this._PrixTot = value;
-                //SetProperty(ref _PrixTot, value);
+                this._prixTot = value;
+                SetProperty(ref _prixTot, value);
                 NotifierChangementProp("PrixTot");
             }
         }
