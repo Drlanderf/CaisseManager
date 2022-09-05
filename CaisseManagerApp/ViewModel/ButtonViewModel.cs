@@ -8,6 +8,7 @@ using System.Diagnostics;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using CaisseManagerApp.Model;
 using System.ComponentModel;
+using CommonClassLibrary;
 
 namespace CaisseManagerApp.ViewModel
 {
@@ -77,6 +78,8 @@ namespace CaisseManagerApp.ViewModel
         }
         public void Enter()
         {
+            this.MyArticle.Description = Search(this.MyArticle.Code_Barre,"Description");
+            this.MyArticle.PrixUnitaire = int.Parse(Search(this.MyArticle.Code_Barre,"PV"));
             this.MyArticle.PrixTot = this.MyArticle.Quantity * this.MyArticle.PrixUnitaire;
         }
         public void Clear()
@@ -92,6 +95,28 @@ namespace CaisseManagerApp.ViewModel
             List<ArticleModel> LtArticle = new List<ArticleModel>();
             LtArticle.Add(this.MyArticle);
             this.MyShoppingBasket.ShoppingBasket = LtArticle;
+        }
+
+
+        public string Search(string Code_BarreTmp,string WhatToSearch)
+        {
+            try
+            {
+                DAL myDAL = DAL.GetInstance();
+                string result = myDAL.ExecuteQuery("SELECT " +
+                    "TBLARTICLE.[CODE_BARRE], " +
+                    "TBLARTICLE.[DESCRIPTION], " +
+                    "TBLARTICLE.[PA], " +
+                    "TBLARTICLE.[PV] " +
+                    "FROM TBLARTICLE " +
+                    "WHERE(((TBLARTICLE.[CODE_BARRE]) = '" + Code_BarreTmp + "'));", WhatToSearch);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw;
+            }
         }
 
 
