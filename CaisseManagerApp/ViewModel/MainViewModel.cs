@@ -19,7 +19,7 @@ namespace CaisseManagerApp.ViewModel
         public MainViewModel()
         {
             TitleOfMainWindow = "Caisse Manager";
-            LtArticle = new ObservableCollection<ArticleModel>();
+            /*LtArticle = new ObservableCollection<ArticleModel>();
             for (int i = 0; i < 4; i++)
             {
                 ArticleModel articleModel = new ArticleModel();
@@ -28,7 +28,7 @@ namespace CaisseManagerApp.ViewModel
                 articleModel.PrixUnitaire = i + 1 * 5;
                 articleModel.PrixTot = articleModel.PrixUnitaire * articleModel.Quantity;
                 LtArticle.Add(articleModel);
-            }
+            }*/
         }
         #region DATABINDING
         

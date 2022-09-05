@@ -20,7 +20,6 @@ namespace CaisseManagerApp.ViewModel
 
         public string Row_Article(string Code_BarreTmp, string WhatToSearch)
         {//TODO : RETOURNER UN ARTICLE !!!! MODEL A FAIRE
-            //TODO : MODEL PROPRIETER , VIEWMODEL POUR METHODE AFIN DE TRAVAILLER SUR LES MODELE
             try
             {
                 DAL myDAL = DAL.GetInstance();

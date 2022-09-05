@@ -85,6 +85,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ArticleModel.cs" />
+    <Compile Include="Model\FactureModel.cs" />
     <Compile Include="ViewModel\ButtonViewModel.cs" />
     <Compile Include="ViewModel\Commands\Btn0Command.cs" />
     <Compile Include="ViewModel\Commands\Btn1Command.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ShoppingBasketViewModel.cs" />
     <Compile Include="View\UserControls\UCCaisseManagerTopMenu.xaml.cs">
       <DependentUpon>UCCaisseManagerTopMenu.xaml</DependentUpon>
     </Compile>

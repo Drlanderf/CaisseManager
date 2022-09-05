@@ -35,7 +35,7 @@ namespace CaisseManagerApp.View.UserControls
             facturationForm.DataContext = maFacture;
 
             if (facturationForm.ShowDialog() == true) //ShowDialog est bloquant donc utile pour les formulaire
-                maFacture.FacturationPrint();
+                maFacture.Impression();
 
         }
     }

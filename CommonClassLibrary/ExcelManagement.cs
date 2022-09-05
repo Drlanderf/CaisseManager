@@ -37,7 +37,7 @@ namespace CommonClassLibrary
                 Missing.Value, Missing.Value, Missing.Value, Missing.Value));
             return oXl;
         }
-        public void Facture(DateTime DATE_PRINT, DateTime DATE_ECHEANCE, string TVA, string COMMANDE)
+        public void Facture(DateTime DATE_PRINT, DateTime DATE_ECHEANCE, string TVA, string COMMANDE, string RefCommClient)
         {
             try
             {
@@ -47,10 +47,12 @@ namespace CommonClassLibrary
 #pragma warning restore CS0219
                 //FACTURE INFOS
                 oSheet = (Excel._Worksheet)oWb.Sheets["Facture"];
+                oSheet.Range["FACTURE"].Value = Compteur.getCmpt().ToString();
                 oSheet.Range["DATE_PRINT"].Value = DATE_PRINT.ToString();
                 oSheet.Range["DATE_ECHEANCE"].Value = DATE_ECHEANCE.ToString();
                 oSheet.Range["TVA"].Value = TVA;
                 oSheet.Range["COMMANDE"].Value = COMMANDE;
+                oSheet.Range["RefCommClient"].Value = RefCommClient;
 
                 //DETAIL
                /* oSheet = (Excel.Worksheet)oWb.Sheets["Detail"];
