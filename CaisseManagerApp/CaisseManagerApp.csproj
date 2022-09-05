@@ -102,7 +102,6 @@
     <Compile Include="ViewModel\Commands\BtnClearCommand.cs" />
     <Compile Include="ViewModel\Commands\BtnEnterCommand.cs" />
     <Compile Include="ViewModel\Commands\BtnQuantityCommand.cs" />
-    <Compile Include="ViewModel\DBManagementViewModel.cs" />
     <Compile Include="ViewModel\FacturationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\UserControls\UCCaisseManagerTopMenu.xaml.cs">

@@ -59,6 +59,7 @@ namespace CaisseManagerApp.ViewModel
         /// <summary>
         /// Méthodes de ButtonViewModel
         /// </summary>
+        #region Méthodes
         public void SimpleMethod()
         {
             Debug.WriteLine("Hello");
@@ -118,7 +119,7 @@ namespace CaisseManagerApp.ViewModel
                 throw;
             }
         }
-
+        #endregion
 
         #region Implémentation interface Notify property changed
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
