@@ -25,16 +25,16 @@ namespace CommonClassLibrary
 
         private DAL()
         {
-            //ACCESS
+            #region ACCESS
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + 
                                        Environment.CurrentDirectory + 
                                        @"\CaisseManagerDB\DBCaisseManager.accdb;
                                        Persist Security Info=False;
                                        Jet OLEDB:Database Password=";
             connection = new OleDbConnection(connectionString);
+            #endregion
 
-
-            //mySQL
+            #region MySQL
             /*
             private MySqlConnection connection;
             private const string server="";//IP DU SERVEUR
@@ -48,7 +48,7 @@ namespace CommonClassLibrary
                 ";";
             */
             //connection = new MySqlConnection(connectstring);
-
+            #endregion
         }
         private void DB_open()
         {
