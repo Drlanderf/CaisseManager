@@ -137,20 +137,5 @@ namespace CommonClassLibrary
         
 
         
-        //TODO: Faire une grosse querry et traiter en mem et non faire plusieurs requete a chaque fois
-        /*public string DBSearchDescription(string Query)
-        {
-            string qry = "SELECT TBLARTICLE.[DESCRIPTION] AS Status FROM TBLARTICLE WHERE(((TBLARTICLE.[CODE_BARRE]) = '" + Query + "'));";
-            try
-            {
-                OleDbCommand cmd = new OleDbCommand(qry, connection);
-                return retourSearch;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                throw;
-            }
-        }*/
     }
 }
