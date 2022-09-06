@@ -76,7 +76,9 @@ Ceci est un exemple de ce que la technologie WPF a de meilleur à offrir
 ## Roadmap
 
 - [ ] Add Changelog
-- [ ] Add back to top links
+- [X] Add back to top links
+- [ ] Fix Databinding
+- [ ] Fix OleDB
 
 
 See the [open issues](https://github.com/Drlanderf/CaisseManager/issues) for a full list of proposed features (and known issues).
